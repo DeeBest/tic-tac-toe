@@ -15,25 +15,32 @@ body {
     text-align: center;
     padding-top: 1.5rem;
     max-width: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     flex: 0 0 auto;
+    margin-bottom: 1rem 1rem 0rem 1rem;
 }
 #container{
     flex: 1 0 auto;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
 }
 #footer{
     text-align: center;
     font-size: 1.5rem;
+    font-weight: 550;
     flex: 0 0 auto;
     padding-bottom: 1.5rem;
     max-width: 100%;
+    margin: 0rem 1rem 1rem 1rem;
+}
+#start-game-btn {
+    text-align: center;
+    margin-bottom: -2rem;
 }
 #start-game-btn button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin: 1rem;
     width: 8rem;
     height: 4rem;
     text-align: center;
@@ -59,24 +66,54 @@ body {
     color: rgb(177, 44, 159);
 }
 #game {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 90%;
-    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 1rem 0rem 1rem;
+    max-width: 100%;
 }
 #scoreDisplay {
     background-color: rgb(177, 44, 159);
     color: rgb(119, 228, 238);
     text-align: center;
-    padding: 0.5rem;
+    padding: 1.25rem;
     font-size: 1.5rem;
     font-weight: 550;
-    width: 90%;
+    max-width: 100%;
     border-radius: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: 3px solid rgb(119, 228, 238);
 }
 #gameBoard {
-    
+    max-width: 100%;
+    display: grid;
+    outline: none;
+    border: none;
+    border-radius: 3rem;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+}
+.square {
+    display: flex;
+    background-color: rgb(119, 228, 238);
+    border: 0.3rem solid rgb(177, 44, 159);
+    color: rgb(177, 44, 159);
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-radius: 1rem;
+    font-size: 3rem;
+    transition: background-color 0.8s ease-in-out,
+                color 0.8s ease-in-out,
+                font-size 0.8s ease-in-out,
+                border 0.8s ease-in-out;
+}
+.square:hover {
+    font-size: 4.5rem;
+    color: rgb(119, 228, 238);
+    background-color: rgb(177, 44, 159);
+    border: 0.3rem solid rgb(119, 228, 238);
 }
