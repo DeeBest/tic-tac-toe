@@ -5,7 +5,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 body {
-    background-color: rgb(165, 128, 128);
+    background-color: rgb(183, 165, 165);
     color: rgb(177, 44, 159);
     display: flex;
     flex-direction: column;
@@ -28,5 +28,35 @@ body {
     flex: 0 0 auto;
     padding-bottom: 1.5rem;
     max-width: 100%;
-    
+}
+/* #start-game-btn {
+} */
+#start-game-btn button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 8rem;
+    height: 4rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgb(177, 44, 159);
+    color: rgb(119, 228, 238);
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.9s ease-in-out,
+                color 0.9s ease-in-out,
+                width 0.9s ease-in-out,
+                height 0.9s ease-in-out;
+}
+#start-game-btn button:hover {
+    width: 8.5rem;
+    height: 4.5rem;
+    font-size: 3rem;
+    background-color: rgb(119, 228, 238);
+    color: rgb(177, 44, 159);
 }
