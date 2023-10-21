@@ -29,8 +29,6 @@ body {
     padding-bottom: 1.5rem;
     max-width: 100%;
 }
-/* #start-game-btn {
-} */
 #start-game-btn button {
     position: absolute;
     top: 50%;
@@ -59,4 +57,26 @@ body {
     font-size: 3rem;
     background-color: rgb(119, 228, 238);
     color: rgb(177, 44, 159);
+}
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    margin-left: 1.5rem;
+}
+#scoreDisplay {
+    background-color: rgb(177, 44, 159);
+    color: rgb(119, 228, 238);
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 550;
+    width: 90%;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+}
+#gameBoard {
+    
 }
