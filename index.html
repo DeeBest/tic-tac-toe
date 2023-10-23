@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>TicTacToe</title>
+    <link rel="icon" type="image/png" href="icons8-dice-32.png"/>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header id="header">
-        <h1 id="title">Tic Tac Toe</h1>
+        <h1 id="title">TicTacToe</h1>
     </header>
     <main id="container">
         <div id="start-game-btn">
@@ -18,24 +19,25 @@
         </div>
         <div id="game">
             <div id="scoreDisplay">
-                <p id="winnerDisplay">Player1 is the winner</p>
-                <p id="score">Player1: 3  - 2 Player2</p>
+                <p id="score"></p>
+                <p id="winnerDisplay"></p>
             </div>
             <div id="gameBoard">
-                <div class="square">X</div>
-                <div class="square">O</div>
-                <div class="square">X</div>
-                <div class="square">O</div>
-                <div class="square">X</div>
-                <div class="square">O</div>
-                <div class="square">X</div>
-                <div class="square">X</div>
-                <div class="square">X</div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
             </div>
+            <button id="restart-btn">Restart</button>
         </div>
     </main>
     <footer id="footer">
-        <p>Created by Simphiwe <script>document.write(new Date().getFullYear())</script>.</p>
+        <p id="footer-para">Created by Simphiwe <script>document.write(new Date().getFullYear())</script>.</p>
     </footer>
 </body>
 </html>

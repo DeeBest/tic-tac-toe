@@ -13,14 +13,18 @@ body {
 }
 #header {
     text-align: center;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     max-width: 100%;
     font-size: 2rem;
+    font-style: italic;
     flex: 0 0 auto;
-    margin-bottom: 1rem 1rem 0rem 1rem;
+    background-color: rgb(119, 228, 238);
+    border-bottom: 10px solid rgb(177, 44, 159);
 }
 #container{
     flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,9 +35,11 @@ body {
     font-size: 1.5rem;
     font-weight: 550;
     flex: 0 0 auto;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
     max-width: 100%;
-    margin: 0rem 1rem 1rem 1rem;
+    background-color: rgb(177, 44, 159);
+    color: rgb(119, 228, 238);
+    border-top: 10px solid rgb(119, 228, 238);
 }
 #start-game-btn {
     text-align: center;
@@ -49,7 +55,8 @@ body {
     color: rgb(119, 228, 238);
     border: none;
     outline: none;
-    border-radius: 0.5rem;
+    border: 3px solid rgb(119, 228, 238);
+    border-radius: 1rem;
     font-size: 2.5rem;
     cursor: pointer;
     font-weight: 600;
@@ -67,9 +74,11 @@ body {
 }
 #game {
     display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 1rem;
     margin: 1rem 1rem 0rem 1rem;
     max-width: 100%;
@@ -78,17 +87,17 @@ body {
     background-color: rgb(177, 44, 159);
     color: rgb(119, 228, 238);
     text-align: center;
-    padding: 1.25rem;
+    padding: 0.25rem;
     font-size: 1.5rem;
     font-weight: 550;
-    max-width: 100%;
+    height: 70px;
+    width: 300px;
     border-radius: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     outline: none;
     border: 3px solid rgb(119, 228, 238);
 }
 #gameBoard {
-    max-width: 100%;
     display: grid;
     outline: none;
     border: none;
@@ -116,4 +125,29 @@ body {
     color: rgb(119, 228, 238);
     background-color: rgb(177, 44, 159);
     border: 0.3rem solid rgb(119, 228, 238);
+}
+#restart-btn {
+    background-color: rgb(177, 44, 159);
+    color: rgb(119, 228, 238);
+    text-align: center;
+    padding: 0.25rem;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 550;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 3px solid rgb(119, 228, 238);
+    cursor: pointer;
+    transition: background-color 0.9s ease-in-out,
+                color 0.9s ease-in-out,
+                width 0.9s ease-in-out,
+                height 0.9s ease-in-out;
+}
+#restart-btn:hover {
+    background-color: rgb(119, 228, 238);
+    color: rgb(177, 44, 159);
+    width: 7.3rem;
+    height: 3.3rem;
 }
