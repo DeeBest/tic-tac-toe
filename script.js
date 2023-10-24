@@ -1,6 +1,7 @@
 function game() {
     const startGame = document.getElementById('game');
     const startGameBtn = document.getElementById('start-game-btn');
+    const winnerDisplay = document.getElementById('winner-display');
     startGameBtn.addEventListener('click', () => {
         startGame.style.display = 'block';
         startGameBtn.style.display = 'none';
@@ -28,6 +29,11 @@ function game() {
             });
         });
     }
+    function checkTieCondition() {
+        return gameBoardArray.every(item => {
+            return item.classList.contains('clicked');
+        });
+    }
 
     const gameBoard = document.querySelectorAll('#gameBoard .square');
     const gameBoardArray = Array.from(gameBoard);
@@ -38,8 +44,10 @@ function game() {
                 item.textContent = currentPlayer;
                 item.classList.add('clicked');
                 if (checkWinningCombination(currentPlayer)) {
-                    console.log(`${currentPlayer} wins!`);
+                    winnerDisplay.textContent = `${currentPlayer} wins! Restart the game to play again.`;
                     gameWon = true;
+                } else if (checkTieCondition()) {
+                    winnerDisplay.textContent = `Tie game! Restart the game.`;
                 } else {
 
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
