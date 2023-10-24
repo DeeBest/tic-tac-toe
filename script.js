@@ -8,19 +8,24 @@ function game() {
     let currentPlayer = 'X';
     const gameBoard = document.querySelectorAll('#gameBoard .square');
     const gameBoardArray = Array.from(gameBoard);
-    gameBoardArray.forEach((item, index) => {
+    gameBoardArray.forEach((item) => {
         item.addEventListener('click', () => {
-            console.log(`clicked item ${index}`)
-            item.textContent = currentPlayer;
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        });
-    });
-    
+            if (!item.classList.contains('clicked')) {
+                item.textContent = currentPlayer;
+                item.classList.add('clicked');
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        })
+    })
     const restartBtn = document.getElementById('restart-btn');
     restartBtn.addEventListener('click', () => {
         startGame.style.display = 'none';
         startGameBtn.style.display = 'block';
         console.log(' restart button clicked');
+        gameBoardArray.forEach((item) => {
+            item.textContent = '';
+            location.reload();
+        });
     });
 }
 game();
