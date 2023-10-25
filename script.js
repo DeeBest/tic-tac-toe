@@ -77,13 +77,15 @@ const game = (() => {
         e.preventDefault();
     });
     const startGame = document.getElementById('game');
-    const startGameBtn = document.getElementById('start-game-btn');
+    const startGameBtnVsPlayer = document.getElementById('start-game-btn-vs-player');
     const winnerDisplay = document.getElementById('winner-display');
     const restartBtn = document.getElementById('restart-btn');
     const player1 = Player('X');
     const player2 = Player('O');
     const playerVsPlayerBtn = document.getElementById("player-vs-player-btn");
+    const playerVsComputerBtn = document.getElementById("player-vs-computer-btn");
     const OpponentSelectorBtnsContainer = document.getElementById("opponent-selector-btns");
+    const difficultSelectorContainer = document.getElementById('difficulty-select-container');
     let currentPlayer = player1;
     let gameWon = false;
 
@@ -106,9 +108,13 @@ const game = (() => {
         playerNamesContainer.style.display = 'flex';
         OpponentSelectorBtnsContainer.style.display = 'none';
     });
+    playerVsComputerBtn.addEventListener('click', () => {
+        difficultSelectorContainer.style.display = 'flex';
+        OpponentSelectorBtnsContainer.style.display = 'none';
+    });
 
     // Event listener for start game button
-    startGameBtn.addEventListener('click', () => {
+    startGameBtnVsPlayer.addEventListener('click', () => {
         const player1NameInput = document.getElementById('player1-name-input');
         const player2NameInput = document.getElementById('player2-name-input');
         player1.setName(player1NameInput.value || `Player ${player1.marker}`);

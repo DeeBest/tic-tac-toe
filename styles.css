@@ -46,7 +46,6 @@ body {
   display: none;
   text-align: center;
   padding: 1rem;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -84,7 +83,7 @@ body {
   color: rgb(177, 44, 159);
   border: 3px solid rgb(177, 44, 159);
 }
-#players-names-container input {
+input {
   text-align: center;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
@@ -101,7 +100,7 @@ body {
   font-size: 1rem;
   font-weight: 550;
 }
-#start-game-btn {
+#start-game-btn-vs-player,#start-game-btn-vs-computer {
   width: 8rem;
   height: 4rem;
   text-align: center;
@@ -117,7 +116,15 @@ body {
   transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
     width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
 }
-#start-game-btn:hover {
+#start-game-btn-vs-player:hover {
+  width: 8.5rem;
+  height: 4.5rem;
+  font-size: 3rem;
+  background-color: rgb(119, 228, 238);
+  color: rgb(177, 44, 159);
+  border: 3px solid rgb(177, 44, 159);
+}
+#start-game-btn-vs-computer:hover {
   width: 8.5rem;
   height: 4.5rem;
   font-size: 3rem;
@@ -199,4 +206,39 @@ body {
   color: rgb(177, 44, 159);
   width: 7.3rem;
   height: 3.3rem;
+}
+#difficulty-select-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+#difficulty-select {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem;
+}
+#difficulty-select select {
+  width: 13rem;
+  height: 2.5rem;
+  color: rgb(119, 228, 238);
+  background-color: rgb(177, 44, 159);
+  font-size: larger;
+  font-weight: 580;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 2px solid rgb(119, 228, 238);
+  text-align: center;
+  padding: 0.2rem;
+}
+#difficulty-select label {
+  text-align: center;
+  font-weight: 600;
+  font-size: larger;
 }

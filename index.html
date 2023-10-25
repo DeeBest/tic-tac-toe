@@ -18,11 +18,25 @@
         <button id="player-vs-player-btn">Player vs Player</button>
         <button id="player-vs-computer-btn">Player vs Computer</button>
       </div>
-      <form id="players-names-container">
+      <div id="players-names-container">
         <input type="text" name="player1-name" id="player1-name-input" placeholder="Enter player1's name"/>
         <input type="text" name="player2-name" id="player2-name-input" placeholder="Enter player2's name"/>
-        <button type="submit" id="start-game-btn">Start</button>
-      </form>
+        <button type="submit" id="start-game-btn-vs-player">Start</button>
+      </div>
+
+      <div id="difficulty-select-container">
+        <div id="difficulty-select">
+          <label for="difficulty-select">Select Difficulty</label>
+          <select id="difficulty-select">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <input type="text" name="player1-name" id="player1-name-input" placeholder="Enter player1's name"/>
+        <button id="start-game-btn-vs-computer">Start</button>
+      </div>
+
       <div id="game">
         <div id="scoreDisplay">
           <p id="winner-display"></p>
