@@ -43,15 +43,52 @@ body {
   border-top: 10px solid rgb(119, 228, 238);
 }
 #players-names-container {
+  display: none;
   text-align: center;
   padding: 1rem;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#opponent-selector-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+#opponent-selector-btns button {
+  width: 15rem;
+  height: 4rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(177, 44, 159);
+  color: rgb(119, 228, 238);
+  outline: none;
+  border: 3px solid rgb(119, 228, 238);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
+    width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
+}
+#opponent-selector-btns button:hover {
+  width: 15.5rem;
+  height: 4.5rem;
+  font-size: 1.3rem;
+  background-color: rgb(119, 228, 238);
+  color: rgb(177, 44, 159);
+  border: 3px solid rgb(177, 44, 159);
 }
 #players-names-container input {
   text-align: center;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   width: 13rem;
-  display: block;
   outline: none;
   height: 3rem;
   text-align: center;
@@ -63,10 +100,8 @@ body {
   border-radius: 1rem;
   font-size: 1rem;
   font-weight: 550;
-
 }
 #start-game-btn {
-  /* margin: 1rem; */
   width: 8rem;
   height: 4rem;
   text-align: center;
@@ -80,7 +115,7 @@ body {
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
-    width 0.9s ease-in-out, height 0.9s ease-in-out;
+    width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
 }
 #start-game-btn:hover {
   width: 8.5rem;
@@ -88,6 +123,7 @@ body {
   font-size: 3rem;
   background-color: rgb(119, 228, 238);
   color: rgb(177, 44, 159);
+  border: 3px solid rgb(177, 44, 159);
 }
 #game {
   display: flex;
