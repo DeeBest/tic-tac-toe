@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TicTacToe</title>
-    <link rel="icon" type="image/png" href="icons8-dice-32.png"/>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicTacToe</title>
+    <link rel="icon" type="image/png" href="icons8-dice-32.png" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <h1 id="title">TicTacToe</h1>
+      <h1 id="title">TicTacToe</h1>
     </header>
     <main id="container">
-        <div id="start-game-btn">
-            <button>Start</button>
+      <form id="players-names-container">
+        <input type="text" name="player1-name" id="player1-name" placeholder="Enter player1's name">
+        <input type="text" name="player2-name" id="player2-name" placeholder="Enter player2's name">
+        <button type="submit" id="start-game-btn">Start</button>
+      </form>
+      <div id="game">
+        <div id="scoreDisplay">
+          <!-- <p id="score"></p> -->
+          <p id="winner-display"></p>
         </div>
-        <div id="game">
-            <div id="scoreDisplay">
-                <!-- <p id="score"></p> -->
-                <p id="winner-display"></p>
-            </div>
-            <div id="gameBoard">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-            <button id="restart-btn">Restart</button>
+        <div id="gameBoard">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
         </div>
+        <button id="restart-btn">Restart</button>
+      </div>
     </main>
     <footer id="footer">
-        <p id="footer-para">Created by Simphiwe <script>document.write(new Date().getFullYear())</script>.</p>
+      <p id="footer-para">
+        Created by Simphiwe
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        .
+      </p>
     </footer>
-</body>
+  </body>
 </html>
