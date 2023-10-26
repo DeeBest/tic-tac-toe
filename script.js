@@ -76,24 +76,40 @@ const game = (() => {
     playerNamesContainer.addEventListener('submit', (e) => {
         e.preventDefault();
     });
+    const difficultSelectorContainer = document.getElementById('difficulty-select-container');
+    difficultSelectorContainer.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
     const startGame = document.getElementById('game');
+    // buttons for starting the game after filling up names
     const startGameBtnVsPlayer = document.getElementById('start-game-btn-vs-player');
     const winnerDisplay = document.getElementById('winner-display');
     const restartBtn = document.getElementById('restart-btn');
     const player1 = Player('X');
     const player2 = Player('O');
+    // buttons for choosing opponent (player/computer) and their container
     const playerVsPlayerBtn = document.getElementById("player-vs-player-btn");
     const playerVsComputerBtn = document.getElementById("player-vs-computer-btn");
     const OpponentSelectorBtnsContainer = document.getElementById("opponent-selector-btns");
-    const difficultSelectorContainer = document.getElementById('difficulty-select-container');
     let currentPlayer = player1;
     let gameWon = false;
+/////////////////////////////////////////////////////////////////////////////////
+    const startGameBtnVsComputer = document.getElementById('start-game-btn-vs-computer');
+    startGameBtnVsComputer.addEventListener('click', () => {
+        const player1NameInput = document.getElementById('player1-name-input');
+        const player2NameInput = document.getElementById('player2-name-input');
+        player1.setName(player1NameInput.value || `Player ${player1.marker}`);
+        player2.setName(player2NameInput.value || `Player ${player2.marker}`);
+        difficultSelectorContainer.style.display = 'none';
+        startGame.style.display = 'block';
+        console.log('click');
+    });
+// /////////////////////////////////////////////////////////////////////
 
     // Private function to switch players
     const _switchPlayers = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
-
     // Private function to handle game over
     const _handleGameOver = (result) => {
         if (result === 'win') {
@@ -103,17 +119,18 @@ const game = (() => {
         }
         gameWon = true;
     };
-    //event listener for the player vs player button
+    //event listener for the player vs player button option
     playerVsPlayerBtn.addEventListener('click', () => {
         playerNamesContainer.style.display = 'flex';
         OpponentSelectorBtnsContainer.style.display = 'none';
     });
+    // event listener for player vs computer button option
     playerVsComputerBtn.addEventListener('click', () => {
         difficultSelectorContainer.style.display = 'flex';
         OpponentSelectorBtnsContainer.style.display = 'none';
     });
 
-    // Event listener for start game button
+    // Event listener for start game button player vs player
     startGameBtnVsPlayer.addEventListener('click', () => {
         const player1NameInput = document.getElementById('player1-name-input');
         const player2NameInput = document.getElementById('player2-name-input');
@@ -121,7 +138,7 @@ const game = (() => {
         player2.setName(player2NameInput.value || `Player ${player2.marker}`);
         startGame.style.display = 'block';
         playerNamesContainer.style.display = 'none';
-
+        
         // Set up the game board click event listeners here
         document.querySelectorAll('#gameBoard .square').forEach(square => {
             square.addEventListener('click', () => {
