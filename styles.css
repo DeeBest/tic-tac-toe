@@ -1,17 +1,19 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+      "Lucida Sans", Arial, sans-serif;
 }
+
 body {
-  background-color: rgb(183, 165, 165);
-  color: rgb(177, 44, 159);
+  background-color: #b7a5a5;
+  color: #b12c9f;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
+
 #header {
   text-align: center;
   padding-top: 1rem;
@@ -19,9 +21,10 @@ body {
   font-size: 2rem;
   font-style: italic;
   flex: 0 0 auto;
-  background-color: rgb(119, 228, 238);
-  border-bottom: 10px solid rgb(177, 44, 159);
+  background-color: #77e4ee;
+  border-bottom: 10px solid #b12c9f;
 }
+
 #container {
   flex: 1 0 auto;
   align-items: center;
@@ -31,6 +34,7 @@ body {
   flex-direction: column;
   font-size: 1rem;
 }
+
 #footer {
   text-align: center;
   font-size: 1.5rem;
@@ -38,10 +42,11 @@ body {
   flex: 0 0 auto;
   padding: 1.5rem;
   max-width: 100%;
-  background-color: rgb(177, 44, 159);
-  color: rgb(119, 228, 238);
-  border-top: 10px solid rgb(119, 228, 238);
+  background-color: #b12c9f;
+  color: #77e4ee;
+  border-top: 10px solid #77e4ee;
 }
+
 #players-names-container {
   display: none;
   text-align: center;
@@ -50,6 +55,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #opponent-selector-btns {
   display: flex;
   flex-direction: column;
@@ -58,31 +64,34 @@ body {
   text-align: center;
   padding: 2rem;
 }
+
 #opponent-selector-btns button {
   width: 15rem;
   height: 4rem;
   margin: 0.5rem;
   padding: 1rem;
   text-align: center;
-  background-color: rgb(177, 44, 159);
-  color: rgb(119, 228, 238);
+  background-color: #b12c9f;
+  color: #77e4ee;
   outline: none;
-  border: 3px solid rgb(119, 228, 238);
+  border: 3px solid #77e4ee;
   border-radius: 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
-    width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
+      width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
 }
+
 #opponent-selector-btns button:hover {
   width: 15.5rem;
   height: 4.5rem;
   font-size: 1.3rem;
-  background-color: rgb(119, 228, 238);
-  color: rgb(177, 44, 159);
-  border: 3px solid rgb(177, 44, 159);
+  background-color: #77e4ee;
+  color: #b12c9f;
+  border: 3px solid #b12c9f;
 }
+
 input {
   text-align: center;
   padding: 0.5rem;
@@ -90,50 +99,42 @@ input {
   width: 13rem;
   outline: none;
   height: 3rem;
-  text-align: center;
-  padding: 0.5rem;
-  background-color: rgb(119, 228, 238);
-  color: rgb(177, 44, 159);
+  background-color: #77e4ee;
+  color: #b12c9f;
   outline: none;
-  border: 2px solid rgb(177, 44, 159);
+  border: 2px solid #b12c9f;
   border-radius: 1rem;
   font-size: 1rem;
   font-weight: 550;
 }
-#start-game-btn-vs-player,#start-game-btn-vs-computer {
+
+#start-game-btn-vs-player, #start-game-btn-vs-computer {
   width: 8rem;
   height: 4rem;
   text-align: center;
   padding: 0.5rem;
-  background-color: rgb(177, 44, 159);
-  color: rgb(119, 228, 238);
+  background-color: #b12c9f;
+  color: #77e4ee;
   outline: none;
-  border: 3px solid rgb(119, 228, 238);
+  border: 3px solid #77e4ee;
   border-radius: 1rem;
   font-size: 2.5rem;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
-    width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
+      width 0.9s ease-in-out, border 0.9s ease-in-out, height 0.9s ease-in-out;
 }
-#start-game-btn-vs-player:hover {
+
+#start-game-btn-vs-player:hover, #start-game-btn-vs-computer:hover {
   width: 8.5rem;
   height: 4.5rem;
   font-size: 3rem;
-  background-color: rgb(119, 228, 238);
-  color: rgb(177, 44, 159);
-  border: 3px solid rgb(177, 44, 159);
+  background-color: #77e4ee;
+  color: #b12c9f;
+  border: 3px solid #b12c9f;
 }
-#start-game-btn-vs-computer:hover {
-  width: 8.5rem;
-  height: 4.5rem;
-  font-size: 3rem;
-  background-color: rgb(119, 228, 238);
-  color: rgb(177, 44, 159);
-  border: 3px solid rgb(177, 44, 159);
-}
+
 #game {
-  display: flex;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -143,9 +144,10 @@ input {
   margin: 1rem 1rem 0rem 1rem;
   max-width: 100%;
 }
+
 #scoreDisplay {
-  background-color: rgb(177, 44, 159);
-  color: rgb(119, 228, 238);
+  background-color: #b12c9f;
+  color: #77e4ee;
   text-align: center;
   padding: 0.25rem;
   font-size: 1.5rem;
@@ -155,8 +157,9 @@ input {
   border-radius: 3rem;
   margin-bottom: 0.5rem;
   outline: none;
-  border: 3px solid rgb(119, 228, 238);
+  border: 3px solid #77e4ee;
 }
+
 #gameBoard {
   display: grid;
   outline: none;
@@ -165,28 +168,31 @@ input {
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   grid-template-rows: repeat(3, minmax(100px, 1fr));
 }
+
 .square {
   display: flex;
-  background-color: rgb(119, 228, 238);
-  border: 0.3rem solid rgb(177, 44, 159);
-  color: rgb(177, 44, 159);
+  background-color: #77e4ee;
+  border: 0.3rem solid #b12c9f;
+  color: #b12c9f;
   justify-content: center;
   align-items: center;
   outline: none;
   border-radius: 1rem;
   font-size: 3rem;
   transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out,
-    font-size 0.8s ease-in-out, border 0.8s ease-in-out;
+      font-size 0.8s ease-in-out, border 0.8s ease-in-out;
 }
+
 .square:hover {
   font-size: 4.5rem;
-  color: rgb(119, 228, 238);
-  background-color: rgb(177, 44, 159);
-  border: 0.3rem solid rgb(119, 228, 238);
+  color: #77e4ee;
+  background-color: #b12c9f;
+  border: 0.3rem solid #77e4ee;
 }
+
 #restart-btn {
-  background-color: rgb(177, 44, 159);
-  color: rgb(119, 228, 238);
+  background-color: #b12c9f;
+  color: #77e4ee;
   text-align: center;
   padding: 0.25rem;
   margin: 0.5rem;
@@ -196,17 +202,19 @@ input {
   width: 7rem;
   border-radius: 1rem;
   outline: none;
-  border: 3px solid rgb(119, 228, 238);
+  border: 3px solid #77e4ee;
   cursor: pointer;
   transition: background-color 0.9s ease-in-out, color 0.9s ease-in-out,
-    width 0.9s ease-in-out, height 0.9s ease-in-out;
+      width 0.9s ease-in-out, height 0.9s ease-in-out;
 }
+
 #restart-btn:hover {
-  background-color: rgb(119, 228, 238);
-  color: rgb(177, 44, 159);
+  background-color: #77e4ee;
+  color: #b12c9f;
   width: 7.3rem;
   height: 3.3rem;
 }
+
 #difficulty-select-container {
   display: none;
   flex-direction: column;
@@ -215,6 +223,7 @@ input {
   text-align: center;
   padding: 1rem;
 }
+
 #difficulty-select {
   display: flex;
   flex-direction: column;
@@ -224,19 +233,21 @@ input {
   text-align: center;
   margin: 0.5rem;
 }
+
 #difficulty-select select {
   width: 13rem;
   height: 2.5rem;
-  color: rgb(119, 228, 238);
-  background-color: rgb(177, 44, 159);
+  color: #77e4ee;
+  background-color: #b12c9f;
   font-size: larger;
   font-weight: 580;
   border-radius: 0.5rem;
   outline: none;
-  border: 2px solid rgb(119, 228, 238);
+  border: 2px solid #77e4ee;
   text-align: center;
   padding: 0.2rem;
 }
+
 #difficulty-select label {
   text-align: center;
   font-weight: 600;
