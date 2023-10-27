@@ -70,12 +70,16 @@ const Player = (marker) => {
         marker,
     };
 };
+/////////////////////////////////////////////////////
 
-// Computer player logic
-const ComputerPlayer = (marker) => {
+
+
+
+// Computer player logic for "easy" difficulty
+const ComputerPlayerEasy = (marker) => {
     return {
         makeMove: (squares) => {
-            // Simulated random move (you can replace this with more intelligent logic)
+            // Simulated random move
             const availableSquares = squares.filter(square => !square.classList.contains('clicked'));
             const randomIndex = Math.floor(Math.random() * availableSquares.length);
             return availableSquares[randomIndex];
@@ -87,6 +91,7 @@ const ComputerPlayer = (marker) => {
 
 
 
+///////////////////////////////////////////////////
 // Game module
 const game = (() => {
     const playerNamesContainer = document.getElementById('players-names-container');
@@ -108,7 +113,27 @@ const game = (() => {
 
     let currentPlayer = player1;
     let gameWon = false;
+    ////////////////////////////////////////////////////
 
+
+
+
+    // Declare a variable to store the selected difficulty level
+let selectedDifficulty = "easy"; // You can set a default value
+
+// You can add an event listener to listen for changes in the difficulty select dropdown
+const difficultySelect = document.getElementById("difficulty-select");
+
+difficultySelect.addEventListener("change", (event) => {
+    selectedDifficulty = event.target.value;
+    // You can now use the selectedDifficulty in your game logic
+    // For example, you can adjust the computer's intelligence based on the selected difficulty.
+});
+
+
+
+
+    /////////////////////////////////////////////////
     const computerPlayerBtn = document.getElementById('player-vs-computer-btn');
     computerPlayerBtn.addEventListener('click', () => {
         difficultSelectorContainer.style.display = 'flex';
@@ -117,10 +142,31 @@ const game = (() => {
 
     const startGameBtnVsComputer = document.getElementById('start-game-btn-vs-computer');
     startGameBtnVsComputer.addEventListener('click', () => {
-        //i was using the same id as when the player is played between 2 players, so i changed it here.
         const player1NameInput = document.getElementById('player1-name-input-computer');
         player1.setName(player1NameInput.value || `Player ${player1.marker}`);
-        const computer = ComputerPlayer(player2.marker);
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+        let computer;
+        if (selectedDifficulty === "easy") {
+            computer = ComputerPlayerEasy(player2.marker); // Use the "easy" computer player
+        } else {
+            // Handle other difficulty levels here if needed
+        }
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
         difficultSelectorContainer.style.display = 'none';
         startGame.style.display = 'flex';
 
