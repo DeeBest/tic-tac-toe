@@ -177,6 +177,7 @@ input {
   justify-content: center;
   align-items: center;
   outline: none;
+  cursor: pointer;
   border-radius: 1rem;
   font-size: 3rem;
   transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out,
@@ -252,4 +253,11 @@ input {
   text-align: center;
   font-weight: 600;
   font-size: larger;
+}
+#player-vs-player-form, #player-vs-computer-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

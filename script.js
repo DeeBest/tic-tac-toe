@@ -84,6 +84,9 @@ const ComputerPlayer = (marker) => {
     };
 };
 
+
+
+
 // Game module
 const game = (() => {
     const playerNamesContainer = document.getElementById('players-names-container');
@@ -114,11 +117,12 @@ const game = (() => {
 
     const startGameBtnVsComputer = document.getElementById('start-game-btn-vs-computer');
     startGameBtnVsComputer.addEventListener('click', () => {
-        const player1NameInput = document.getElementById('player1-name-input');
+        //i was using the same id as when the player is played between 2 players, so i changed it here.
+        const player1NameInput = document.getElementById('player1-name-input-computer');
         player1.setName(player1NameInput.value || `Player ${player1.marker}`);
         const computer = ComputerPlayer(player2.marker);
         difficultSelectorContainer.style.display = 'none';
-        startGame.style.display = 'block';
+        startGame.style.display = 'flex';
 
         // Set up the game board click event listeners here
         const squares = gameBoard.getSquares();
@@ -150,7 +154,7 @@ const game = (() => {
         const player2NameInput = document.getElementById('player2-name-input');
         player1.setName(player1NameInput.value || `Player ${player1.marker}`);
         player2.setName(player2NameInput.value || `Player ${player2.marker}`);
-        startGame.style.display = 'block';
+        startGame.style.display = 'flex';
         playerNamesContainer.style.display = 'none';
     
         // Set up the game board click event listeners here
@@ -168,22 +172,32 @@ const game = (() => {
         });
     });
     
-
-
     // Private function to switch players
     const _switchPlayers = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
+    
+// Private function to handle game over
+const _handleGameOver = (result) => {
+    let winningPlayerName = '';
 
-    // Private function to handle game over
-    const _handleGameOver = (result) => {
-        if (result === 'win') {
-            winnerDisplay.textContent = `${currentPlayer.getName()} wins! Restart the game to play again.`;
-        } else if (result === 'tie') {
-            winnerDisplay.textContent = `Tie game! Restart the game.`;
+    if (result === 'win') {
+        if (currentPlayer === player1) {
+            winningPlayerName = player1.getName() || 'Player X';
+        } else if (currentPlayer === player2) {
+            winningPlayerName = player2.getName() || 'Player O';
+        } else {
+            // The computer player won
+            winningPlayerName = 'Computer';
         }
-        gameWon = true;
-    };
+
+        winnerDisplay.textContent = `${winningPlayerName} wins! Restart the game to play again.`;
+    } else if (result === 'tie') {
+        winnerDisplay.textContent = 'Tie game! Restart the game.';
+    }
+
+    gameWon = true;
+};
 
     const playerVsPlayerBtn = document.getElementById('player-vs-player-btn');
     playerVsPlayerBtn.addEventListener('click', () => {
