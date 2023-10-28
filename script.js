@@ -70,11 +70,6 @@ const Player = (marker) => {
         marker,
     };
 };
-/////////////////////////////////////////////////////
-
-
-
-
 // Computer player logic for "easy" difficulty
 const ComputerPlayerEasy = (marker) => {
     return {
@@ -87,11 +82,6 @@ const ComputerPlayerEasy = (marker) => {
         marker,
     };
 };
-
-
-
-
-///////////////////////////////////////////////////
 // Game module
 const game = (() => {
     const playerNamesContainer = document.getElementById('players-names-container');
@@ -113,27 +103,17 @@ const game = (() => {
 
     let currentPlayer = player1;
     let gameWon = false;
-    ////////////////////////////////////////////////////
-
-
-
-
     // Declare a variable to store the selected difficulty level
-let selectedDifficulty = "easy"; // You can set a default value
+    let selectedDifficulty = "easy"; // You can set a default value
 
-// You can add an event listener to listen for changes in the difficulty select dropdown
-const difficultySelect = document.getElementById("difficulty-select");
+    // You can add an event listener to listen for changes in the difficulty select dropdown
+    // const difficultySelect = document.getElementById("difficulty-select");
 
-difficultySelect.addEventListener("change", (event) => {
-    selectedDifficulty = event.target.value;
+    // difficultySelect.addEventListener("change", (event) => {
+    // selectedDifficulty = event.target.value;
     // You can now use the selectedDifficulty in your game logic
     // For example, you can adjust the computer's intelligence based on the selected difficulty.
-});
-
-
-
-
-    /////////////////////////////////////////////////
+    // });
     const computerPlayerBtn = document.getElementById('player-vs-computer-btn');
     computerPlayerBtn.addEventListener('click', () => {
         difficultSelectorContainer.style.display = 'flex';
@@ -144,29 +124,12 @@ difficultySelect.addEventListener("change", (event) => {
     startGameBtnVsComputer.addEventListener('click', () => {
         const player1NameInput = document.getElementById('player1-name-input-computer');
         player1.setName(player1NameInput.value || `Player ${player1.marker}`);
-////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
         let computer;
         if (selectedDifficulty === "easy") {
             computer = ComputerPlayerEasy(player2.marker); // Use the "easy" computer player
         } else {
             // Handle other difficulty levels here if needed
         }
-
-
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-
         difficultSelectorContainer.style.display = 'none';
         startGame.style.display = 'flex';
 
@@ -202,7 +165,7 @@ difficultySelect.addEventListener("change", (event) => {
         player2.setName(player2NameInput.value || `Player ${player2.marker}`);
         startGame.style.display = 'flex';
         playerNamesContainer.style.display = 'none';
-    
+
         // Set up the game board click event listeners here
         document.querySelectorAll('#gameBoard .square').forEach(square => {
             square.addEventListener('click', () => {
@@ -217,33 +180,33 @@ difficultySelect.addEventListener("change", (event) => {
             });
         });
     });
-    
+
     // Private function to switch players
     const _switchPlayers = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
-    
-// Private function to handle game over
-const _handleGameOver = (result) => {
-    let winningPlayerName = '';
 
-    if (result === 'win') {
-        if (currentPlayer === player1) {
-            winningPlayerName = player1.getName() || 'Player X';
-        } else if (currentPlayer === player2) {
-            winningPlayerName = player2.getName() || 'Player O';
-        } else {
-            // The computer player won
-            winningPlayerName = 'Computer';
+    // Private function to handle game over
+    const _handleGameOver = (result) => {
+        let winningPlayerName = '';
+
+        if (result === 'win') {
+            if (currentPlayer === player1) {
+                winningPlayerName = player1.getName() || 'Player X';
+            } else if (currentPlayer === player2) {
+                winningPlayerName = player2.getName() || 'Player O';
+            } else {
+                // The computer player won
+                winningPlayerName = 'Computer';
+            }
+
+            winnerDisplay.textContent = `${winningPlayerName} wins! Restart the game to play again.`;
+        } else if (result === 'tie') {
+            winnerDisplay.textContent = 'Tie game! Restart the game.';
         }
 
-        winnerDisplay.textContent = `${winningPlayerName} wins! Restart the game to play again.`;
-    } else if (result === 'tie') {
-        winnerDisplay.textContent = 'Tie game! Restart the game.';
-    }
-
-    gameWon = true;
-};
+        gameWon = true;
+    };
 
     const playerVsPlayerBtn = document.getElementById('player-vs-player-btn');
     playerVsPlayerBtn.addEventListener('click', () => {
